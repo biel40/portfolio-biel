@@ -1,9 +1,10 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import '../styles/main.css';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Projects from "../components/Projects.astro";
+import "../styles/main.css";
 ---
 
 <!doctype html>
@@ -14,26 +15,27 @@ import '../styles/main.css';
 	<body>
 		<Header title={SITE_TITLE} />
 		<main class="main">
-			<h1>¡Bienvenido, Gianni!</h1>
-			<p>
-				Te doy la bienvenida a la template de mi nuevo proyecto de portafolio hecho con Typescript y Astro 4.0. Lo he empezado hace una hora así que no esperes mucho. <br>
-				¡Pero no te preocupes! En los próximos días iré añadiendi más contenido y mejorando el diseño.
-			</p>
-			<p>
-				Aquí encontrarás la principal información sobre los proyectos en los que he trabajado:
-			</p>
-			<ul>
-				<li>
-					<a href="/">Proyecto 1</a>
-				</li>
-				<li>
-					<a href="/">Proyecto 2</a>
-				</li>
-				<li>
-					<a href="/">Proyecto 3</a>
-				</li>
-			</ul>
+			<div class="index-container">
+				<h4>¡Hola! Me llamo Gabriel Borràs Serra</h4>
+				<p>
+					Actualmente tengo +4 años de experiencia en el desarrollo de aplicaciones web. 
+					Me gusta mucho la tecnología, y particularmente el desarrollo de aplicaciones Fullstack, Bases de Datos y programación de funciones en entornos Cloud.
+				</p>
+				<p>
+					Aquí encontrarás la principal información sobre los
+					proyectos en los que he trabajado:
+				</p>
+				<Projects />
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.index-container {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+</style>

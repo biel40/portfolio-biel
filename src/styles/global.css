@@ -40,7 +40,10 @@ body {
 	line-height: 1.7;
 }
 main {
-	width: 720px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #FBF9F1;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;

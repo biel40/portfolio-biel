@@ -1,0 +1,36 @@
+---
+let projects = [
+    {
+        title: 'Project 1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+        image: 'https://picsum.photos/200/300',
+        link: 'https://google.com'
+    },
+    {
+        title: 'Project 2',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
+        image: 'https://picsum.photos/200/300',
+        link: 'https://google.com'
+    }
+]
+---
+
+<div>
+    <div class="project-container">
+        {projects.map((project) => (
+            // Maquetar la card de cada proyecto
+            <div class="project-card">
+            <p> {project.title} </p>
+            <p> {project.description} </p>
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+    .project-card {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+    }
+</style>
