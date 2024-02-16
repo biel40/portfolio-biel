@@ -2,15 +2,21 @@
 let projects = [
     {
         title: 'SMART NetZero',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        image: 'https://picsum.photos/200/300',
-        link: 'https://google.com'
+        description: 'Proyecto completo de desarrollo de una plataforma para mostrar información en tiempo real de la huella de carbono de una empresa u organización. Además, se incorporó tecnología de comunicación en tiempo real con la Blockchain a través de la nube.',
+        image: 'https://lirp.cdn-website.com/4f5f6628/dms3rep/multi/opt/a1-f2550e9f-1920w.png',
+        link: 'https://www.trueworldorganization.com/trueSolutions'
+    },
+    {
+        title: 'Ok Mobility',
+        description: 'Mantenimiento y desarrollo de nuevas funcionalidades para el CRM de la empresa, así como la creación de una plataforma de gestión de flotas de vehículos y el mantenimiento de un proyecto de Pricing de vehículos.',
+        image: 'https://okmobility.com/alquilar/images/app-landing/foto1.jpg',
+        link: 'https://corporate.okmobility.com/es/'
     },
     {
         title: 'Hotelinking',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-        image: 'https://picsum.photos/200/300',
-        link: 'https://google.com'
+        image: 'https://www.hotelinking.com/wp-content/uploads/2023/07/SWiFiHeaderEs.png',
+        link: 'https://www.hotelinking.com/'
     }
 ]
 ---
@@ -20,17 +26,50 @@ let projects = [
         {projects.map((project) => (
             // Maquetar la card de cada proyecto
             <div class="project-card">
-            <p> {project.title} </p>
-            <p> {project.description} </p>
+                <h4 class="project-title"> {project.title} </h4>
+
+                <div class="image-container">
+                    <img class="image" src={project.image} alt={project.title} />
+                </div>
+               
+            
+                <p> {project.description} </p>
+
+                <a class="project-link" href={project.link}> Ver más </a>
             </div>
         ))}
     </div>
 </div>
 
 <style>
+    .project-container {
+        width: 100%;
+    }
+
     .project-card {
         border: 1px solid black;
         padding: 10px;
-        margin: 10px;
+        margin: 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project-title {
+        margin: 1em;
+    }
+
+    .image-container {
+        width: 80%;
+        height: fit-content;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .project-link {
+        align-self: center;
     }
 </style>
