@@ -1,0 +1,240 @@
+---
+import Layout from "../layouts/BlogPost.astro";
+---
+
+<Layout
+	title="Tecnologías y aptitudes"
+	description="Lorem ipsum dolor sit amet"
+	pubDate={new Date()}
+>
+	<div class="tech-container">
+		<p id="title">
+			Listado de tecnologías y aptitudes del desarrollo de software
+		</p>
+
+		<!-- Tabs para cada tipo de tecnología -->
+
+		<nav class="tech-menu">
+			<ul>
+				<li>
+					<a href="#todas">Todas</a>
+				</li>
+				<li>
+					<a href="#frontend">Frontend</a>
+				</li>
+				<li>
+					<a href="#backend">Backend</a>
+				</li>
+				<li>
+					<a href="#devops">DevOps</a>
+				</li>
+				<li>
+					<a href="#mobile">Mobile</a>
+				</li>
+				<li>
+					<a href="#database">Database</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- LISTADO DE CARDS DE TECNOLOGÍAS -->
+	<div class="tech-container">
+		<div>
+			<div class="tech-cards">
+				<div class="tech-card">
+					<h3>HTML</h3>
+					<p>
+						HTML es el lenguaje de marcado estándar para documentos
+						diseñados para ser mostrados en un navegador web.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>CSS</h3>
+					<p>
+						CSS es un lenguaje usado para describir la presentación
+						de un documento estructurado escrito en HTML.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>JavaScript</h3>
+					<p>
+						JavaScript es un lenguaje de programación que se utiliza
+						principalmente para crear páginas web interactivas.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>React</h3>
+					<p>
+						React es una biblioteca de JavaScript para construir
+						interfaces de usuario.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>Node.js</h3>
+					<p>
+						Node.js es un entorno de ejecución para JavaScript
+						construido con el motor de JavaScript V8 de Chrome.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>Express</h3>
+					<p>
+						Express es un marco de aplicación web de back-end para
+						Node.js.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>Git</h3>
+					<p>
+						Git es un sistema de control de versiones distribuido de
+						código abierto.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>GitHub</h3>
+					<p>
+						GitHub es una plataforma de desarrollo colaborativo de
+						software para alojar proyectos utilizando el sistema de
+						control de versiones Git.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>Heroku</h3>
+					<p>
+						Heroku es una plataforma como servicio en la nube que
+						admite varios lenguajes de programación.
+					</p>
+				</div>
+				<div class="tech-card">
+					<h3>Android</h3>
+					<p>Android</p>
+				</div>
+				<div class="tech-card">
+					<h3>MySQL</h3>
+					<p>
+						MySQL es un sistema de gestión de bases de datos
+						relacional de código abierto.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		#title {
+			margin-bottom: 2em !important;
+			margin-top: 0 !important;
+		}
+
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.tech-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			animation: fadeIn 2s ease-in-out;
+		}
+
+		input {
+			background: none;
+			color: black;
+			font-size: 18px;
+			padding: 10px 10px 10px 5px;
+			display: block;
+			width: 100%;
+			border: none;
+			border-radius: 0;
+			border-bottom: 1px solid black;
+			&:focus {
+				outline: none;
+			}
+			&:focus ~ label,
+			&:valid ~ label {
+				top: -14px;
+				font-size: 12px;
+				color: green;
+			}
+		}
+
+		label {
+			color: black;
+			font-size: 16px;
+			font-weight: normal;
+			position: absolute;
+			pointer-events: none;
+			left: 5px;
+			top: 10px;
+		}
+
+		/* Estilos generales para el menú de pestañas */
+		.tech-menu {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			padding: 10px;
+			margin-bottom: 2em;
+		}
+
+		/* Estilos para la lista de pestañas */
+		.tech-menu ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+		}
+
+		.tech-menu li {
+			margin: 0 10px;
+		}
+
+		.tech-menu a {
+			text-decoration: none;
+			color: #fbf9f1;
+			padding: 8px 16px; /* Espaciado interno de la pestaña */
+			border-radius: 8%;
+			background-color: #aad7d9; /* Fondo de la pestaña */
+			transition: background-color 0.3s ease-in-out; /* Transición suave de color */
+		}
+
+		.tech-menu a:hover {
+			background-color: linear-gradient(var(--gray-gradient)) no-repeat;
+			color: var(--black);
+		}
+
+		/* Media query para dispositivos móviles */
+		@media only screen and (max-width: 500px) {
+			.tech-menu {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+			}
+
+			.tech-menu a {
+				margin: 5px 0;
+			}
+
+			.tech-menu ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.tech-menu li {
+				margin-top: 1em;
+			}
+		}
+	</style>
+</Layout>
