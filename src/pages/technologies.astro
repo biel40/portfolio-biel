@@ -2,6 +2,76 @@
 import Layout from "../layouts/BlogPost.astro";
 ---
 
+<script type="text/javascript">
+	// Código JavaScript para el filtro de tecnologías
+	let techMenu = document.querySelector(".tech-menu");
+	let techCards = document.getElementsByClassName("tech-card");
+
+	// Función para mostrar todas las tecnologías
+	function filterAll() {
+		Array.from(techCards).forEach((card) => {
+			card.style.display = "block";
+		});
+	}
+
+	// Función para mostrar tecnologías de Frontend
+	function filterFrontend() {
+		// Tech cards es un nodeList, no un array, por lo que no se puede usar forEach directamente
+		// Se debe convertir a un array primero
+		Array.from(techCards).forEach((card) => {
+			if (card.classList.contains("frontend")) {
+				card.style.display = "block";
+			} else {
+				card.style.display = "none";
+			}
+		});
+	}
+
+	// Función para mostrar tecnologías de Backend
+	function filterBackend() {
+		Array.from(techCards).forEach((card) => {
+			if (card.classList.contains("backend")) {
+				card.style.display = "block";
+			} else {
+				card.style.display = "none";
+			}
+		});
+	}
+
+	// Función para mostrar tecnologías de DevOps
+	function filterDevOps() {
+		Array.from(techCards).forEach((card) => {
+			if (card.textContent.includes("devops")) {
+				card.style.display = "block";
+			} else {
+				card.style.display = "none";
+			}
+		});
+	}
+
+	// Función para mostrar tecnologías de Mobile
+	function filterMobile() {
+		Array.from(techCards).forEach((card) => {
+			if (card.textContent.includes("android")) {
+				card.style.display = "block";
+			} else {
+				card.style.display = "none";
+			}
+		});
+	}
+
+	// Función para mostrar tecnologías de Database
+	function filterDatabase() {
+		Array.from(techCards).forEach((card) => {
+			if (card.textContent.includes("database")) {
+				card.style.display = "block";
+			} else {
+				card.style.display = "none";
+			}
+		});
+	}
+</script>
+
 <Layout
 	title="Tecnologías y aptitudes"
 	description="Lorem ipsum dolor sit amet"
@@ -13,26 +83,25 @@ import Layout from "../layouts/BlogPost.astro";
 		</p>
 
 		<!-- Tabs para cada tipo de tecnología -->
-
 		<nav class="tech-menu">
 			<ul>
 				<li>
-					<a href="#todas">Todas</a>
+					<a href="#todas" onclick="filterAll()">Todas</a>
 				</li>
 				<li>
-					<a href="#frontend">Frontend</a>
+					<a href="#frontend" onclick="filterFrontend()">Frontend</a>
 				</li>
 				<li>
-					<a href="#backend">Backend</a>
+					<a href="#backend" onclick="filterBackend()">Backend</a>
 				</li>
 				<li>
-					<a href="#devops">DevOps</a>
+					<a href="#devops" onclick="filterDevOps()">DevOps</a>
 				</li>
 				<li>
-					<a href="#mobile">Mobile</a>
+					<a href="#mobile" onclick="filterMobile()">Mobile</a>
 				</li>
 				<li>
-					<a href="#database">Database</a>
+					<a href="#database" onclick="filterDatabase()">Database</a>
 				</li>
 			</ul>
 		</nav>
@@ -42,42 +111,42 @@ import Layout from "../layouts/BlogPost.astro";
 	<div class="tech-container">
 		<div>
 			<div class="tech-cards">
-				<div class="tech-card">
+				<div class="tech-card frontend">
 					<h3>HTML</h3>
 					<p>
 						HTML es el lenguaje de marcado estándar para documentos
 						diseñados para ser mostrados en un navegador web.
 					</p>
 				</div>
-				<div class="tech-card">
+				<div class="tech-card frontend">
 					<h3>CSS</h3>
 					<p>
 						CSS es un lenguaje usado para describir la presentación
 						de un documento estructurado escrito en HTML.
 					</p>
 				</div>
-				<div class="tech-card">
+				<div class="tech-card frontend backend">
 					<h3>JavaScript</h3>
 					<p>
 						JavaScript es un lenguaje de programación que se utiliza
 						principalmente para crear páginas web interactivas.
 					</p>
 				</div>
-				<div class="tech-card">
+				<div class="tech-card frontend">
 					<h3>React</h3>
 					<p>
 						React es una biblioteca de JavaScript para construir
 						interfaces de usuario.
 					</p>
 				</div>
-				<div class="tech-card">
+				<div class="tech-card backend">
 					<h3>Node.js</h3>
 					<p>
 						Node.js es un entorno de ejecución para JavaScript
 						construido con el motor de JavaScript V8 de Chrome.
 					</p>
 				</div>
-				<div class="tech-card">
+				<div class="tech-card backend">
 					<h3>Express</h3>
 					<p>
 						Express es un marco de aplicación web de back-end para

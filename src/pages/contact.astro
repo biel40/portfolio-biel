@@ -7,5 +7,27 @@ import Layout from "../layouts/BlogPost.astro";
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date()}
 >
-	<p>Maquetar esto</p>
+	<div class="contact-container">
+		<p>Si quieres contactar conmigo, puedes hacerlo a través de mi correo electrónico: <a href="mailto:{{ metadata.email }}">bielet40@gmail.com</a></p>
+		<p>O si lo prefieres, puedes hacerlo a través de mis redes sociales:</p>
+		<ul>
+			<li><a href="https://twitter.com/{{ metadata.twitter }}">Twitter</a></li>
+		</ul>
+
+	</div>
 </Layout>
+
+<style>
+	.contact-container {
+		max-width: 75%;
+		margin: 0 auto;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		margin-bottom: 1rem;
+	}
+</style>

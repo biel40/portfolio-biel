@@ -7,29 +7,31 @@ import Layout from "../layouts/BlogPost.astro";
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date()}
 >
-	<p>
-		Soy un chico joven, de 25 años de edad. Nací el 15 de Julio de 1998 en
-		Palma de Mallorca. Mis mayores aficiones son jugar a videojuegos y todo
-		lo relacionado con el mundo de la informática y de las nuevas
-		tecnologías. También soy bastante fan de algunas películas y sagas
-		conocidas de cine (por ejemplo Star Wars o Marvel) y de la cultura «pop»
-		en general. Actualmente trabajo como Desarrollador Web en Waka
-		Solutions, una empresa ubicada también en Palma de Mallorca (Parc Bit).
-		He vivido toda mi vida en Palma de Mallorca, donde aún resido a día de
-		hoy, y donde tengo a la mayoría de mis amigos y familiares.
-	</p>
-	<br />
-	<div class="my-image-container">
-		<img class="my-image" src="../../img/me.jpg" alt="Me" />
+	<div class="about-container">
+		<p>
+			Soy un chico joven, de 25 años de edad. Nací el 15 de Julio de 1998
+			en Palma de Mallorca. Mis mayores aficiones son jugar a videojuegos
+			y todo lo relacionado con el mundo de la informática y de las nuevas
+			tecnologías. También soy bastante fan de algunas películas y sagas
+			conocidas de cine (por ejemplo Star Wars o Marvel) y de la cultura
+			«pop» en general. Actualmente trabajo como Desarrollador Web en Waka
+			Solutions, una empresa ubicada también en Palma de Mallorca (Parc
+			Bit). He vivido toda mi vida en Palma de Mallorca, donde aún resido
+			a día de hoy, y donde tengo a la mayoría de mis amigos y familiares.
+		</p>
+		<br />
+		<div class="my-image-container">
+			<!--  <img class="my-image" src="../../img/me.jpg" alt="Me" /> -->
+		</div>
+
+		<p>
+			Respecto a mis estudios, soy Técnico Superior en Desarrollo de
+			Aplicaciones Web, una de mis mayores aficiones, que, por suerte, he
+			podido desarrollar como mi carrera profesional. Me gradué en Junio
+			de 2019 en el instituto concertado Es Liceu, cumpliendo así uno de
+			mis mayores sueños y una de mis grandes metas.
+		</p>
 	</div>
-	
-	<p>
-		Respecto a mis estudios, soy Técnico Superior en Desarrollo de
-		Aplicaciones Web, una de mis mayores aficiones, que, por suerte, he
-		podido desarrollar como mi carrera profesional. Me
-		gradué en Junio de 2019 en el instituto concertado Es Liceu, cumpliendo
-		así uno de mis mayores sueños y una de mis grandes metas.
-	</p>
 </Layout>
 
 <style>
@@ -59,5 +61,11 @@ import Layout from "../layouts/BlogPost.astro";
 		width: 50%;
 		align-self: center;
 		animation: fadeIn 2.5s ease-in-out;
+	}
+
+	.about-container {
+		max-width: 75%;
+		margin: 0 auto;
+		text-align: left;
 	}
 </style>
