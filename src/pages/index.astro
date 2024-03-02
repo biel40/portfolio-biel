@@ -18,28 +18,95 @@ import "../styles/main.css";
 			<div class="index-container">
 				<h5>¡Hola! Me llamo Gabriel Borràs Serra</h5>
 				<p>
-					Actualmente tengo +4 años de experiencia en el desarrollo de aplicaciones web. 
-					Me gusta mucho la tecnología, y particularmente el desarrollo de aplicaciones Fullstack, Bases de Datos y programación de funciones en entornos Cloud.
+					Actualmente tengo +4 años de experiencia en el desarrollo de
+					aplicaciones web. Me gusta mucho la tecnología, y
+					particularmente el desarrollo de aplicaciones Fullstack,
+					Bases de Datos y programación de funciones en entornos
+					Cloud.
 				</p>
 				<p>
 					Aquí encontrarás la principal información sobre los
 					proyectos en los que he trabajado:
 				</p>
+
+				<div class="cv-button-container">
+					<button id="cv-download" class="cv-download">
+						Descárgate mi CV
+					</button>
+				</div>
+
 				<Projects />
 			</div>
 		</main>
 		<Footer />
 	</body>
-</html>
+	
+	<script>
+		const button = document.getElementById("cv-download");
 
-<style>
-	.index-container {
-		max-width: 75%;
-		margin: 0 auto;
-		margin-top: 1em;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-</style>
+		if (button) {
+			button.addEventListener("click", () => {
+				window.open("https://blogdebiel.es/pdf/cvBiel.pdf", "_blank");
+			});
+		}
+	</script>
+
+	<style>
+		.index-container {
+			max-width: 75%;
+			margin: 0 auto;
+			margin-top: 1em;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.cv-button-container {
+			display: flex;
+			justify-content: center;
+			margin-top: 1em;
+		}
+
+		.cv-download {
+			align-items: center;
+			background-image: linear-gradient(
+				144deg,
+				#aad7d9,
+				white 85%,
+				#fbf9f1
+			);
+			border-radius: 5px;
+			box-shadow: rgba(151, 65, 252, 0.2) 0 5px 15px -5px;
+			box-sizing: border-box;
+			color: black;
+			display: flex;
+			font-family: Phantomsans, sans-serif;
+			font-size: 20px;
+			justify-content: center;
+			line-height: 1em;
+			padding: 15px 25px;
+			text-decoration: none;
+			user-select: none;
+			-webkit-user-select: none;
+			touch-action: manipulation;
+			white-space: nowrap;
+			cursor: pointer;
+			transition:
+				background-color 0.3s,
+				transform 0.3s,
+				box-shadow 0.3s;
+		}
+
+		.cv-download:hover {
+			background-image: linear-gradient(
+				144deg,
+				#aad7d9,
+				#e0f2f3 85%,
+				#fbf9f1
+			);
+			transform: scale(1.05);
+			box-shadow: rgba(151, 65, 252, 0.4) 0 8px 20px -5px;
+		}
+	</style>
+</html>

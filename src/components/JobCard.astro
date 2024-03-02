@@ -1,0 +1,70 @@
+---
+let jobs = [
+    {
+        title: 'Waka Solutions',
+        description: 'Consultoría y desarrollo de software a medida. Desarrollo de aplicaciones web y móviles punteras en tecnología.',
+        image: 'https://scontent.fpmi4-1.fna.fbcdn.net/v/t39.30808-6/302227388_589731429405054_8496925303078216473_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=3tDAtQ8ivAEAX9zzRhN&_nc_ht=scontent.fpmi4-1.fna&oh=00_AfAPm6Z7OE7Bqp1NjayzQK88SJzukSMYPscdwXghDPXd7Q&oe=65E8694F',
+        link: 'https://waka.solutions/'
+    },
+    {
+        title: 'Ok Mobility',
+        description: 'Mantenimiento y desarrollo de nuevas funcionalidades para el CRM de la empresa, así como la creación de una plataforma de gestión de flotas de vehículos y el mantenimiento de un proyecto de Pricing de vehículos.',
+        image: 'https://okmobility.com/alquilar/images/app-landing/foto1.jpg',
+        link: 'https://corporate.okmobility.com/es/'
+    },
+    {
+        title: 'Plexus Tech',
+        description: 'Desarrollo de una plataforma de datos abiertos para el Consell de Mallorca. La plataforma permite la visualización y descarga de datos de diferentes temáticas.',
+        image: 'https://www.mallorcaopendata.net/wp-content/uploads/2021/06/Logo-MOD-1.png',
+        link: 'https://www.mallorcaopendata.net/'
+    },
+    {
+        title: 'Hotelinking',
+        description: 'Start-Up mallorquina enfocada principalmente al sector turístico y a una suite de productos de fidelización y marketing para el sector hotelero. Desarrollo de nuevas funcionalidades y mantenimiento de la plataforma',
+        image: 'https://www.hotelinking.com/wp-content/uploads/2023/07/SWiFiHeaderEs.png',
+        link: 'https://www.hotelinking.com/'
+    }
+]
+---
+
+<div>
+    <div class="job-container">
+        {jobs.map((job) => (
+            <div class="job-card">
+                <h4 class="job-title">{job.title}</h4>
+                <div class="image-container">
+                    <img class="image" src={job.image} alt={job.title} />
+                </div>
+            </div>
+        ))}
+    </div>
+</div>
+
+<style>
+    .job-container {
+        width: 100%;
+    }
+
+    .job-card {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-container {
+        width: 30%;
+        height: fit-content;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .job-link {
+        align-self: center;
+    }
+</style>
