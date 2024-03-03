@@ -82,7 +82,6 @@ import Layout from "../layouts/BlogPost.astro";
 			Listado de tecnologías y aptitudes del desarrollo de software
 		</p>
 
-		<!-- Tabs para cada tipo de tecnología -->
 		<nav class="tech-menu">
 			<ul>
 				<li>
@@ -245,7 +244,6 @@ import Layout from "../layouts/BlogPost.astro";
 			top: 10px;
 		}
 
-		/* Estilos generales para el menú de pestañas */
 		.tech-menu {
 			display: flex;
 			flex-direction: row;
@@ -254,7 +252,6 @@ import Layout from "../layouts/BlogPost.astro";
 			margin-bottom: 2em;
 		}
 
-		/* Estilos para la lista de pestañas */
 		.tech-menu ul {
 			list-style: none;
 			margin: 0;
@@ -269,10 +266,10 @@ import Layout from "../layouts/BlogPost.astro";
 		.tech-menu a {
 			text-decoration: none;
 			color: #fbf9f1;
-			padding: 8px 16px; /* Espaciado interno de la pestaña */
+			padding: 8px 16px;
 			border-radius: 8%;
-			background-color: #aad7d9; /* Fondo de la pestaña */
-			transition: background-color 0.3s ease-in-out; /* Transición suave de color */
+			background-color: #aad7d9;
+			transition: background-color 0.3s ease-in-out;
 		}
 
 		.tech-menu a:hover {
@@ -284,25 +281,24 @@ import Layout from "../layouts/BlogPost.astro";
 		@media only screen and (max-width: 500px) {
 			.tech-menu {
 				display: flex;
-				flex-direction: column;
-				width: 100%;
-			}
-
-			.tech-menu a {
-				margin: 5px 0;
+				justify-content: center;
+				align-items: center;
 			}
 
 			.tech-menu ul {
 				list-style: none;
-				margin: 0;
 				padding: 0;
+				margin: 0;
 				display: flex;
-				flex-direction: column;
+				flex-wrap: wrap;
+				justify-content: center;
 				align-items: center;
+				width: 100%;
+				gap: 2em;
 			}
 
 			.tech-menu li {
-				margin-top: 1em;
+				flex: 0 0 30%; 
 			}
 		}
 	</style>
