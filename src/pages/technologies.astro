@@ -355,7 +355,7 @@ import Layout from "../layouts/BlogPost.astro";
 								d="M52.83,77.596	c0,0-0.095,1.358,0.186,3.001"
 							></path>
 						</svg>
-						Bases de datos
+						Databases
 					</a>
 				</li>
 			</ul>
@@ -536,7 +536,7 @@ import Layout from "../layouts/BlogPost.astro";
 		li > a {
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			gap: 15px;
 		}
 
 		/* Media query para dispositivos móviles */
@@ -549,14 +549,15 @@ import Layout from "../layouts/BlogPost.astro";
 
 			.tech-menu ul {
 				list-style: none;
-				padding: 0;
-				margin: 0;
-				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
-				align-items: center;
-				width: 100%;
-				gap: 2em;
+				gap: 1em;
+			}
+
+			.tech-menu li {
+				flex-basis: calc(33.33% - 10px); 
+				margin-bottom: 10px; 
+				width: 500px;
 			}
 		}
 	</style>
