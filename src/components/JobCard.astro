@@ -3,7 +3,7 @@ let jobs = [
     {
         title: 'Waka Solutions',
         description: 'Consultoría y desarrollo de software a medida. Desarrollo de aplicaciones web y móviles punteras en tecnología.',
-        image: 'https://scontent.fpmi4-1.fna.fbcdn.net/v/t39.30808-6/302227388_589731429405054_8496925303078216473_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=3tDAtQ8ivAEAX9zzRhN&_nc_ht=scontent.fpmi4-1.fna&oh=00_AfAPm6Z7OE7Bqp1NjayzQK88SJzukSMYPscdwXghDPXd7Q&oe=65E8694F',
+        image: 'https://media.licdn.com/dms/image/C4D0BAQGw2-GXZP8goQ/company-logo_200_200/0/1631331669565?e=1718841600&v=beta&t=V8cjf8vcs9k8JIaLRu0pUcMCp2A6aUHOuFxicQSk83U',
         link: 'https://waka.solutions/'
     },
     {
@@ -15,7 +15,7 @@ let jobs = [
     {
         title: 'Plexus Tech',
         description: 'Desarrollo de una plataforma de datos abiertos para el Consell de Mallorca. La plataforma permite la visualización y descarga de datos de diferentes temáticas.',
-        image: 'https://www.mallorcaopendata.net/wp-content/uploads/2021/06/Logo-MOD-1.png',
+        image: 'https://www.plexus.es/wp-content/uploads/2021/07/logo_cropped.png',
         link: 'https://www.mallorcaopendata.net/'
     },
     {
@@ -35,6 +35,10 @@ let jobs = [
                 <div class="image-container">
                     <img class="image" src={job.image} alt={job.title} />
                 </div>
+                
+                <p class="job-description">{job.description}</p>
+
+                <a class="job-link" href={job.link} target="_blank">Ver más</a>
             </div>
         ))}
     </div>
@@ -43,6 +47,17 @@ let jobs = [
 <style>
     .job-container {
         width: 100%;
+    }
+
+    .job-title {
+        margin-bottom: 2%;
+    }
+
+    .job-description {
+        margin: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .job-card {
@@ -58,10 +73,9 @@ let jobs = [
     .image-container {
         width: 30%;
         height: fit-content;
-    }
-
-    .image {
-        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .job-link {
