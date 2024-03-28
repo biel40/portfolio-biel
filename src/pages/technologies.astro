@@ -1,66 +1,121 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+
+let technologies = [
+	{
+		name: "React",
+		type: "frontend",
+		description:
+			"React es una librería de JavaScript para construir interfaces de usuario.",
+		link: "https://reactjs.org/",
+	},
+	{
+		name: "Vue.js",
+		type: "frontend",
+		description:
+			"Vue.js es un framework progresivo para construir interfaces de usuario.",
+		link: "https://vuejs.org/",
+	},
+	{
+		name: "Angular",
+		type: "frontend",
+		description:
+			"Angular es un framework de Typescript (superconjunto de JavaScript) para construir aplicaciones web modernas y escalables.",
+		link: "https://angular.io/",
+
+	},
+	{
+		name: "Node.js",
+		type: "backend",
+	},
+	{
+		name: "Express",
+		type: "backend",
+	},
+	{
+		name: "Git",
+		type: "devops",
+	},
+	{
+		name: "GitHub",
+		type: "devops",
+	},
+	{
+		name: "Android",
+		type: "mobile",
+	},
+	{
+		name: "MySQL",
+		type: "database",
+	},
+	{
+		name: "PostgreSQL",
+		type: "database",
+	},
+	{
+		name: "HTML",
+		type: "frontend",
+	},
+	{
+		name: "CSS",
+		type: "frontend",
+	},
+	{
+		name: "JavaScript",
+		type: "frontend",
+	},
+];
 ---
 
 <script type="text/javascript">
-	// Código JavaScript para el filtro de tecnologías
-	let techMenu = document.querySelector(".tech-menu");
 	let techCards = document.getElementsByClassName("tech-card");
 
-	// Función para mostrar todas las tecnologías
 	function filterAll() {
 		Array.from(techCards).forEach((card) => {
-			card.style.display = "block";
+			card.style.display = "flex";
 		});
 	}
 
-	// Función para mostrar tecnologías de Frontend
 	function filterFrontend() {
-		// Tech cards es un nodeList, no un array, por lo que no se puede usar forEach directamente
-		// Se debe convertir a un array primero
 		Array.from(techCards).forEach((card) => {
 			if (card.classList.contains("frontend")) {
-				card.style.display = "block";
+				card.style.display = "flex";
 			} else {
 				card.style.display = "none";
 			}
 		});
 	}
 
-	// Función para mostrar tecnologías de Backend
 	function filterBackend() {
 		Array.from(techCards).forEach((card) => {
 			if (card.classList.contains("backend")) {
-				card.style.display = "block";
+				card.style.display = "flex";
 			} else {
 				card.style.display = "none";
 			}
 		});
 	}
 
-	// Función para mostrar tecnologías de DevOps
 	function filterDevOps() {
 		Array.from(techCards).forEach((card) => {
 			if (card.textContent.includes("devops")) {
-				card.style.display = "block";
+				card.style.display = "flex";
 			} else {
 				card.style.display = "none";
 			}
 		});
 	}
 
-	// Función para mostrar tecnologías de Mobile
 	function filterMobile() {
 		Array.from(techCards).forEach((card) => {
 			if (card.textContent.includes("android")) {
-				card.style.display = "block";
+				card.style.display = "flex";
 			} else {
 				card.style.display = "none";
 			}
 		});
 	}
 
-	// Función para mostrar tecnologías de Database
 	function filterDatabase() {
 		Array.from(techCards).forEach((card) => {
 			if (card.textContent.includes("database")) {
@@ -362,87 +417,18 @@ import Layout from "../layouts/BlogPost.astro";
 		</nav>
 	</div>
 
-	<!-- LISTADO DE CARDS DE TECNOLOGÍAS -->
 	<div class="tech-container">
-		<div>
-			<div class="tech-cards">
-				<div class="tech-card frontend">
-					<h3>HTML</h3>
-					<p>
-						HTML es el lenguaje de marcado estándar para documentos
-						diseñados para ser mostrados en un navegador web.
-					</p>
+		{
+			technologies.map((technology) => (
+				<div class={technology.type + " tech-card"} style="margin-top: 1em;">
+					<h4>{technology.name}</h4>
+					<p>{technology.description}</p>
+					<a class="job-link" href={technology.link} target="_blank">
+						Ver más
+					</a>
 				</div>
-				<div class="tech-card frontend">
-					<h3>CSS</h3>
-					<p>
-						CSS es un lenguaje usado para describir la presentación
-						de un documento estructurado escrito en HTML.
-					</p>
-				</div>
-				<div class="tech-card frontend backend">
-					<h3>JavaScript</h3>
-					<p>
-						JavaScript es un lenguaje de programación que se utiliza
-						principalmente para crear páginas web interactivas.
-					</p>
-				</div>
-				<div class="tech-card frontend">
-					<h3>React</h3>
-					<p>
-						React es una biblioteca de JavaScript para construir
-						interfaces de usuario.
-					</p>
-				</div>
-				<div class="tech-card backend">
-					<h3>Node.js</h3>
-					<p>
-						Node.js es un entorno de ejecución para JavaScript
-						construido con el motor de JavaScript V8 de Chrome.
-					</p>
-				</div>
-				<div class="tech-card backend">
-					<h3>Express</h3>
-					<p>
-						Express es un marco de aplicación web de back-end para
-						Node.js.
-					</p>
-				</div>
-				<div class="tech-card">
-					<h3>Git</h3>
-					<p>
-						Git es un sistema de control de versiones distribuido de
-						código abierto.
-					</p>
-				</div>
-				<div class="tech-card">
-					<h3>GitHub</h3>
-					<p>
-						GitHub es una plataforma de desarrollo colaborativo de
-						software para alojar proyectos utilizando el sistema de
-						control de versiones Git.
-					</p>
-				</div>
-				<div class="tech-card">
-					<h3>Heroku</h3>
-					<p>
-						Heroku es una plataforma como servicio en la nube que
-						admite varios lenguajes de programación.
-					</p>
-				</div>
-				<div class="tech-card">
-					<h3>Android</h3>
-					<p>Android</p>
-				</div>
-				<div class="tech-card">
-					<h3>MySQL</h3>
-					<p>
-						MySQL es un sistema de gestión de bases de datos
-						relacional de código abierto.
-					</p>
-				</div>
-			</div>
-		</div>
+			))
+		}
 	</div>
 
 	<style>
@@ -467,6 +453,13 @@ import Layout from "../layouts/BlogPost.astro";
 			flex-direction: column;
 			align-items: center;
 			animation: fadeIn 2s ease-in-out;
+		}
+
+		.tech-card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 75%;
 		}
 
 		input {
@@ -555,8 +548,8 @@ import Layout from "../layouts/BlogPost.astro";
 			}
 
 			.tech-menu li {
-				flex-basis: calc(33.33% - 10px); 
-				margin-bottom: 10px; 
+				flex-basis: calc(33.33% - 10px);
+				margin-bottom: 10px;
 				width: 500px;
 			}
 		}
