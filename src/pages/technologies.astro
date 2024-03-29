@@ -27,42 +27,65 @@ let technologies = [
 	{
 		name: "Node.js",
 		type: "backend",
+		description: "Node.js es un entorno de ejecución de JavaScript.",
+		link: "https://nodejs.org/",
 	},
 	{
 		name: "Express",
 		type: "backend",
+		description:
+			"Express es un framework de Node.js para construir aplicaciones web y APIs.",
+		link: "https://expressjs.com/",
+	},
+	{
+		name: "NestJS",
+		type: "backend",
+		description:
+			"NestJS es un framework de Node.js basado en Express para poder construir aplicaciones web y APIs.",
+		link: "https://nestjs.com/",
 	},
 	{
 		name: "Git",
 		type: "devops",
+		description: "Git es un sistema de control de versiones distribuido.",
+		link: "https://git-scm.com/",
 	},
 	{
 		name: "GitHub",
 		type: "devops",
-	},
-	{
-		name: "Android",
-		type: "mobile",
+		description:
+			"GitHub es una plataforma de desarrollo colaborativo de software para alojar proyectos utilizando el sistema de control de versiones Git.",
+		link: "https://github.com"
 	},
 	{
 		name: "MySQL",
 		type: "database",
+		description: "MySQL es un sistema de gestión de bases de datos relacional.",
+		link: "https://www.mysql.com/",
 	},
 	{
 		name: "PostgreSQL",
 		type: "database",
+		description: "PostgreSQL es un sistema de gestión de bases de datos relacional.",
+		link: "https://www.postgresql.org/",
 	},
 	{
-		name: "HTML",
+		name: "HTML5",
 		type: "frontend",
+		description: "HTML es un lenguaje de marcado para la elaboración de páginas web.",
+		link: "https://developer.mozilla.org/es/docs/Web/HTML",
 	},
 	{
 		name: "CSS",
 		type: "frontend",
+		description: "CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en HTML.",
+		link: "https://developer.mozilla.org/es/docs/Web/CSS",
 	},
 	{
 		name: "JavaScript",
 		type: "frontend",
+		description: "JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web interactivas.",
+		link: "https://developer.mozilla.org/es/docs/Web/JavaScript",
 	},
 ];
 ---
@@ -417,10 +440,10 @@ let technologies = [
 		</nav>
 	</div>
 
-	<div class="tech-container">
+	<div class="tech-cards-container">
 		{
 			technologies.map((technology) => (
-				<div class={technology.type + " tech-card"} style="margin-top: 1em;">
+				<div class={technology.type + " tech-card"} style="margin-top: 1.5em;">
 					<h4>{technology.name}</h4>
 					<p>{technology.description}</p>
 					<a class="job-link" href={technology.link} target="_blank">
@@ -452,14 +475,30 @@ let technologies = [
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			justify-content: center;
+			width: 100%;
 			animation: fadeIn 2s ease-in-out;
+		}
+
+		.tech-cards-container {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
 		}
 
 		.tech-card {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			width: 75%;
+		}
+
+		.tech-card > p {
+			margin: 0;
+			padding: 0;
+			text-align: center;
 		}
 
 		input {
