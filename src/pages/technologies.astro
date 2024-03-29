@@ -161,7 +161,7 @@ let technologies = [
 		</p>
 
 		<nav class="tech-menu">
-			<ul>
+			<ul class="ul">
 				<li>
 					<a href="#all" class="frontend" onclick="filterAll()">
 						<svg
@@ -433,7 +433,7 @@ let technologies = [
 								d="M52.83,77.596	c0,0-0.095,1.358,0.186,3.001"
 							></path>
 						</svg>
-						Databases
+						Database
 					</a>
 				</li>
 			</ul>
@@ -554,10 +554,10 @@ let technologies = [
 		.tech-menu a {
 			text-decoration: none;
 			color: #fbf9f1;
-			padding: 8px 16px;
 			border-radius: 8%;
 			background-color: #aad7d9;
 			transition: background-color 0.3s ease-in-out;
+			padding: 0.8rem;
 		}
 
 		.tech-menu a:hover {
@@ -584,17 +584,13 @@ let technologies = [
 				list-style: none;
 				flex-wrap: wrap;
 				justify-content: center;
-				gap: 1em;
+				gap: 1.4em;
+				width: 100%;
 			}
 
 			.tech-menu li {
-				flex-basis: calc(33.33% - 10px);
-				margin-bottom: 10px;
-				width: 500px;
-			}
-
-			main {
-				overflow-x: hidden;
+				flex-basis: calc(40%);
+		
 			}
 		}
 	</style>
