@@ -1,9 +1,9 @@
 ---
 let projects = [
     {
-        title: 'RRQ',
-        description: 'Proyecto para la empresa Repsol para la creaciçon de un Chat interactivo con Inteligencia Artificial para el departamento de Refino y Química de la empresa. El chat permite a los usuarios realizar preguntas sobre la empresa, documentos técnicos internos importantes y obtener respuestas en tiempo real.',
-        image: 'https://rrq.es/wp-content/uploads/2021/06/rrq-logo.png',
+        title: 'RRQ - Repsol',
+        description: 'Proyecto para la empresa Repsol para la creación de un Chat interactivo con Inteligencia Artificial para el departamento de Refino y Química de la empresa. El chat permite a los usuarios realizar preguntas sobre la empresa, documentos técnicos internos importantes y obtener respuestas en tiempo real.',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Repsol_company_logo.svg',
         link: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Repsol_company_logo.svg'
     },
     {
@@ -43,7 +43,6 @@ let projects = [
                     <img class="image" src={project.image} alt={project.title} />
                 </div>
                
-            
                 <p> {project.description} </p>
 
                 <a class="project-link" href={project.link}> Ver más </a>
@@ -77,7 +76,8 @@ let projects = [
     }
 
     .image {
-        width: 100%;
+        width: 60%;
+        max-width: 60%;
     }
 
     .project-link {
