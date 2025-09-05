@@ -8,60 +8,177 @@ import Layout from "../layouts/BlogPost.astro";
 	pubDate={new Date()}
 >
 	<div class="about-container">
-		<p>
-			Soy un chico joven, de 25 años de edad. Nací el 15 de Julio de 1998
-			en Palma de Mallorca. Mis mayores aficiones son jugar a videojuegos
-			y todo lo relacionado con el mundo de la informática y de las nuevas
-			tecnologías. También soy bastante fan de algunas películas y sagas
-			conocidas de cine (por ejemplo Star Wars o Marvel) y de la cultura
-			«pop» en general. Actualmente trabajo como Desarrollador Web en Waka
-			Solutions, una empresa ubicada también en Palma de Mallorca (Parc
-			Bit). He vivido toda mi vida en Palma de Mallorca, donde aún resido
-			a día de hoy, y donde tengo a la mayoría de mis amigos y familiares.
-		</p>
-		<br />
-		<div class="my-image-container">
-			<img class="my-image" src="../../img/me2.JPG" alt="Me" />
+		<div class="about-intro">
+			<h2>¡Hola! Soy Gabriel Borrás Serra</h2>
+			<p class="intro-subtitle">Desarrollador Web Full Stack apasionado por la tecnología. ¡Me puedes llamar Biel!</p>
 		</div>
 
-		<p>
-			Respecto a mis estudios, soy Técnico Superior en Desarrollo de
-			Aplicaciones Web, una de mis mayores aficiones, que, por suerte, he
-			podido desarrollar como mi carrera profesional. Me gradué en Junio
-			de 2019 en el instituto concertado Es Liceu, cumpliendo así uno de
-			mis mayores sueños y una de mis grandes metas.
-		</p>
+		<div class="about-content">
+			<div class="about-card personal-info">
+				<div class="card-icon">
+					<svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+						<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+					</svg>
+				</div>
+				<h3>Sobre mí</h3>
+				<p>
+					Soy un chico joven, de 25 años de edad. Nací el 15 de Julio de 1998
+					en Palma de Mallorca. Mis mayores aficiones son jugar a videojuegos
+					y todo lo relacionado con el mundo de la informática y de las nuevas
+					tecnologías. También soy bastante fan de algunas películas y sagas
+					conocidas de cine (por ejemplo Star Wars o Marvel) y de la cultura
+					«pop» en general.
+				</p>
+			</div>
+
+			<div class="about-card work-info">
+				<div class="card-icon">
+					<svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+						<path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm6 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/>
+					</svg>
+				</div>
+				<h3>Experiencia Profesional</h3>
+				<p>
+					Actualmente trabajo como Desarrollador Web en Waka
+					Solutions, una empresa ubicada también en Palma de Mallorca (Parc
+					Bit). He vivido toda mi vida en Palma de Mallorca, donde aún resido
+					a día de hoy, y donde tengo a la mayoría de mis amigos y familiares.
+				</p>
+			</div>
+
+			<div class="about-card education-info">
+				<div class="card-icon">
+					<svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+						<path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+					</svg>
+				</div>
+				<h3>Formación</h3>
+				<p>
+					Soy Técnico Superior en Desarrollo de
+					Aplicaciones Web, una de mis mayores aficiones, que, por suerte, he
+					podido desarrollar como mi carrera profesional. Me gradué en Junio
+					de 2019 en el instituto concertado Es Liceu, cumpliendo así uno de
+					mis mayores sueños y una de mis grandes metas.
+				</p>
+			</div>
+
+			<div class="image-section">
+				<div class="my-image-container">
+					<img class="my-image" src="../../img/me2.JPG" alt="Gabriel Borràs Serra" />
+					<div class="image-overlay">
+						<p>Biel</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="interests-section">
+				<h3>Mis intereses</h3>
+				<div class="interests-grid">
+					<div class="interest-item">
+						<div class="interest-icon">🎮</div>
+						<span>Videojuegos</span>
+					</div>
+					<div class="interest-item">
+						<div class="interest-icon">💻</div>
+						<span>Tecnología</span>
+					</div>
+					<div class="interest-item">
+						<div class="interest-icon">🎬</div>
+						<span>Cine</span>
+					</div>
+					<div class="interest-item">
+						<div class="interest-icon">⭐</div>
+						<span>Star Wars</span>
+					</div>
+					<div class="interest-item">
+						<div class="interest-icon">🦸‍♂️</div>
+						<span>Marvel</span>
+					</div>
+					<div class="interest-item">
+						<div class="interest-icon">🌟</div>
+						<span>Cultura Pop</span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </Layout>
 
 <style>
-	p {
-		animation: fadeIn 2.5s ease-in-out;
+	/* Override layout styles para centrado completo */
+	:global(main) {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		min-height: 100vh !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	:global(article) {
+		width: 100% !important;
+		max-width: 1200px !important;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		margin: 0 auto !important;
+		padding: 0 !important;
+	}
+
+	:global(.prose) {
+		width: 100% !important;
+		max-width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
+	:global(.title) {
+		display: none !important;
+	}
+
+	:global(.hero-image) {
+		display: none !important;
 	}
 
 	@keyframes fadeIn {
 		from {
 			opacity: 0;
+			transform: translateY(20px);
 		}
-
 		to {
 			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 
-	.my-image-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
+	@keyframes slideInFromLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 
-	.my-image {
-		border-radius: 1%;
-		width: 50%;
-		align-self: center;
-		animation: fadeIn 2.5s ease-in-out;
-		margin-bottom: 1em;
+	@keyframes slideInFromRight {
+		from {
+			opacity: 0;
+			transform: translateX(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
 	}
 
 	.about-container {
@@ -70,7 +187,340 @@ import Layout from "../layouts/BlogPost.astro";
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-left: 10px;
-		text-align: left;
+		max-width: 1200px;
+		width: 100%;
+		padding: 2em 1em;
+		box-sizing: border-box;
+		animation: fadeIn 2.5s ease-in-out;
+	}
+
+	.about-intro {
+		text-align: center;
+		margin-bottom: 1.5em;
+		padding: 1.5em;
+		background: linear-gradient(135deg, rgba(var(--gray-light), 0.3), rgba(255, 255, 255, 0.8));
+		border-radius: 16px;
+		box-shadow: var(--box-shadow);
+		border: 1px solid rgba(var(--gray), 0.1);
+		width: 100%;
+	}
+
+	.about-intro h2 {
+		color: var(--accent);
+		font-size: 2.2em;
+		margin-bottom: 0.3em;
+		font-weight: 700;
+		animation: slideInFromLeft 2.8s ease-in-out;
+	}
+
+	.intro-subtitle {
+		font-size: 1.1em;
+		color: rgb(var(--gray-dark));
+		margin: 0;
+		font-weight: 500;
+		animation: slideInFromRight 3.1s ease-in-out;
+	}
+
+	.about-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5em;
+		width: 100%;
+		animation: fadeIn 3.5s ease-in-out;
+	}
+
+	.about-card {
+		background: rgba(255, 255, 255, 0.95);
+		border-radius: 16px;
+		padding: 2em 1.8em;
+		box-shadow: var(--box-shadow);
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		border: 1px solid rgba(var(--gray), 0.1);
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	.about-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.about-card:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 12px 40px rgba(var(--gray), 30%), 0 20px 60px rgba(var(--gray), 20%);
+	}
+
+	.about-card:hover::before {
+		transform: scaleX(1);
+	}
+
+	.card-icon {
+		width: 80px;
+		height: 80px;
+		margin: 0 auto 1.5em;
+		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		transition: transform 0.3s ease;
+	}
+
+	.about-card:hover .card-icon {
+		transform: scale(1.1) rotate(5deg);
+	}
+
+	.about-card h3 {
+		color: rgb(var(--black));
+		font-size: 1.8em;
+		margin-bottom: 1em;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.about-card p {
+		color: rgb(var(--gray-dark));
+		line-height: 1.7;
+		font-size: 1.1em;
+		text-align: center;
+		margin: 0;
+	}
+
+	.image-section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 1.5em 0;
+	}
+
+	.my-image-container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.my-image {
+		border-radius: 20px;
+		width: 100%;
+		max-width: 350px;
+		height: auto;
+		transition: all 0.3s ease;
+		box-shadow: var(--box-shadow);
+		border: 4px solid rgba(var(--accent), 0.1);
+	}
+
+	.my-image:hover {
+		transform: scale(1.05);
+		box-shadow: 0 20px 60px rgba(var(--gray), 40%);
+	}
+
+	.image-overlay {
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+		color: white;
+		padding: 0.8em 1.5em;
+		border-radius: 25px;
+		font-weight: 600;
+		font-size: 1.1em;
+		box-shadow: 0 8px 25px rgba(var(--accent), 0.3);
+		transition: all 0.3s ease;
+	}
+
+	.image-overlay:hover {
+		transform: translateX(-50%) translateY(-5px);
+		box-shadow: 0 15px 35px rgba(var(--accent), 0.4);
+	}
+
+	.image-overlay p {
+		margin: 0;
+	}
+
+	.interests-section {
+		background: linear-gradient(135deg, rgba(var(--accent), 0.05), rgba(var(--accent-dark), 0.05));
+		border-radius: 16px;
+		padding: 2em 1.8em;
+		border: 1px solid rgba(var(--gray), 0.1);
+		margin-top: 0.5em;
+	}
+
+	.interests-section h3 {
+		color: rgb(var(--black));
+		font-size: 2em;
+		margin-bottom: 1.5em;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.interests-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 1.5em;
+	}
+
+	.interest-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1.5em 1em;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 12px;
+		transition: all 0.3s ease;
+		border: 1px solid rgba(var(--gray), 0.1);
+		cursor: default;
+	}
+
+	.interest-item:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(var(--gray), 25%);
+		background: rgba(255, 255, 255, 1);
+	}
+
+	.interest-icon {
+		font-size: 2.5em;
+		margin-bottom: 0.5em;
+		transition: transform 0.3s ease;
+	}
+
+	.interest-item:hover .interest-icon {
+		transform: scale(1.2);
+	}
+
+	.interest-item span {
+		color: rgb(var(--gray-dark));
+		font-weight: 600;
+		font-size: 1em;
+		text-align: center;
+	}
+
+	/* Responsive Design */
+	@media (min-width: 768px) {
+		.about-content {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2em;
+		}
+
+		.image-section {
+			grid-column: 1 / -1;
+			order: 4;
+		}
+
+		.interests-section {
+			grid-column: 1 / -1;
+			order: 5;
+		}
+
+		.personal-info {
+			order: 1;
+		}
+
+		.work-info {
+			order: 2;
+		}
+
+		.education-info {
+			order: 3;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.about-container {
+			padding: 1em;
+		}
+
+		:global(main) {
+			min-height: auto !important;
+		}
+
+		.about-content {
+			grid-template-columns: 1fr;
+		}
+
+		.about-intro {
+			padding: 1.2em;
+			margin-bottom: 1.2em;
+		}
+
+		.about-intro h2 {
+			font-size: 1.9em;
+		}
+
+		.intro-subtitle {
+			font-size: 1em;
+		}
+
+		.about-card {
+			padding: 1.8em 1.5em;
+		}
+
+		.card-icon {
+			width: 60px;
+			height: 60px;
+		}
+
+		.about-card h3 {
+			font-size: 1.5em;
+		}
+
+		.about-card p {
+			font-size: 1em;
+		}
+
+		.my-image {
+			max-width: 280px;
+		}
+
+		.interests-grid {
+			grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+			gap: 1em;
+		}
+
+		.interest-item {
+			padding: 1em 0.5em;
+		}
+
+		.interest-icon {
+			font-size: 2em;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.about-container {
+			padding: 0.5em;
+		}
+
+		.about-intro h2 {
+			font-size: 1.6em;
+		}
+
+		.intro-subtitle {
+			font-size: 0.9em;
+		}
+
+		.about-card {
+			padding: 1.5em 1em;
+		}
+
+		.my-image {
+			max-width: 250px;
+		}
+
+		.interests-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 </style>
