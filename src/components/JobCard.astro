@@ -1,84 +1,349 @@
 ---
 let jobs = [
     {
-        title: 'Waka Solutions',
-        description: 'Consultoría y desarrollo de software a medida. Desarrollo de aplicaciones web y móviles punteras en tecnología. En Waka Solutions, he realizado todo tipo de proyectos, trabajando principalmente con el Stack de Angular y .NET Core (v8.0). En ésta empresa, al ser de consultoría tecnológica, he trabajado en más de 5 proyectos diferentes',
-        image: 'https://media.licdn.com/dms/image/v2/C4D0BAQGw2-GXZP8goQ/company-logo_200_200/company-logo_200_200/0/1631331669565?e=1759968000&v=beta&t=y3lKgsFvFkUiwfJ3cOiRa3W3HYCkDhczEI29yOSDefU',
-        link: 'https://waka.solutions/'
+        title: "Waka Solutions",
+        role: "Desarrollador Full Stack",
+        period: "2023 - Presente",
+        description:
+            "Consultoría y desarrollo de software a medida. Desarrollo de aplicaciones web y móviles punteras en tecnología. En Waka Solutions, he realizado todo tipo de proyectos, trabajando principalmente con el Stack de Angular y .NET Core (v8.0). En ésta empresa, al ser de consultoría tecnológica, he trabajado en más de 5 proyectos diferentes",
+        technologies: [
+            "Angular",
+            ".NET Core 8.0",
+            "TypeScript",
+            "C#",
+            "SQL Server",
+        ],
+        image: "https://media.licdn.com/dms/image/v2/C4D0BAQGw2-GXZP8goQ/company-logo_200_200/company-logo_200_200/0/1631331669565?e=1759968000&v=beta&t=y3lKgsFvFkUiwfJ3cOiRa3W3HYCkDhczEI29yOSDefU",
+        link: "https://waka.solutions/",
     },
     {
-        title: 'Ok Mobility',
-        description: 'Mantenimiento y desarrollo de nuevas funcionalidades para el CRM de la empresa, así como la creación de una plataforma de gestión de flotas de vehículos y el mantenimiento de un proyecto de Pricing de vehículos.',
-        image: 'https://okmobility.com/alquilar/images/app-landing/foto1.jpg',
-        link: 'https://corporate.okmobility.com/es/'
+        title: "Ok Mobility",
+        role: "Desarrollador Frontend/Backend",
+        period: "2022 - 2023",
+        description:
+            "Mantenimiento y desarrollo de nuevas funcionalidades para el CRM de la empresa, así como la creación de una plataforma de gestión de flotas de vehículos y el mantenimiento de un proyecto de Pricing de vehículos.",
+        technologies: ["React", "Node.js", "MongoDB", "REST APIs", "Docker"],
+        image: "https://okmobility.com/alquilar/images/app-landing/foto1.jpg",
+        link: "https://corporate.okmobility.com/es/",
     },
     {
-        title: 'Plexus Tech',
-        description: 'Desarrollo y análisis de un proyecto de gestión de presupuestos del estado para la FSE (fondos sociales europeos).',
-        image: 'https://www.plexus.es/wp-content/uploads/2021/07/logo_cropped.png',
-        link: 'https://www.plexus.es/'
+        title: "Plexus Tech",
+        role: "Analista Desarrollador",
+        period: "2021 - 2022",
+        description:
+            "Desarrollo y análisis de un proyecto de gestión de presupuestos del estado para la FSE (fondos sociales europeos).",
+        technologies: ["Java", "Spring Boot", "Oracle DB", "JSF", "Maven"],
+        image: "https://www.plexus.es/wp-content/uploads/2021/07/logo_cropped.png",
+        link: "https://www.plexus.es/",
     },
     {
-        title: 'Hotelinking',
-        description: 'Start-Up mallorquina enfocada principalmente al sector turístico y a una suite de productos de fidelización y marketing para el sector hotelero. Desarrollo de nuevas funcionalidades para algunas aplicaciones y mantenimiento de la plataforma núcleo.',
-        image: 'https://www.hotelinking.com/wp-content/uploads/2023/07/SWiFiHeaderEs.png',
-        link: 'https://www.hotelinking.com/'
-    }
-]
+        title: "Hotelinking",
+        role: "Desarrollador Junior",
+        period: "2020 - 2021",
+        description:
+            "Start-Up mallorquina enfocada principalmente al sector turístico y a una suite de productos de fidelización y marketing para el sector hotelero. Desarrollo de nuevas funcionalidades para algunas aplicaciones y mantenimiento de la plataforma núcleo.",
+        technologies: ["PHP", "Laravel", "MySQL", "Vue.js", "Bootstrap"],
+        image: "https://www.hotelinking.com/wp-content/uploads/2023/07/SWiFiHeaderEs.png",
+        link: "https://www.hotelinking.com/",
+    },
+];
 ---
 
-<div>
-    <div class="job-container">
-        {jobs.map((job) => (
+<div class="jobs-container">
+    {
+        jobs.map((job) => (
             <div class="job-card">
-                <h4 class="job-title">{job.title}</h4>
-                <div class="image-container">
-                    <img class="image" src={job.image} alt={job.title} />
+                <div class="job-header">
+                    <div class="company-logo">
+                        <img src={job.image} alt={job.title} />
+                    </div>
+                    <div class="job-info">
+                        <h3 class="company-name">{job.title}</h3>
+                        <p class="job-role">{job.role}</p>
+                        <span class="job-period">{job.period}</span>
+                    </div>
                 </div>
-                
-                <p class="job-description">{job.description}</p>
 
-                <a class="job-link" href={job.link} target="_blank">Ver más</a>
+                <div class="job-content">
+                    <p class="job-description">{job.description}</p>
+
+                    <div class="technologies">
+                        <h4>Tecnologías utilizadas:</h4>
+                        <div class="tech-tags">
+                            {job.technologies.map((tech) => (
+                                <span class="tech-tag">{tech}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-footer">
+                    <a
+                        class="job-link"
+                        href={job.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                        >
+                            <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                        </svg>
+                        Ver empresa
+                    </a>
+                </div>
             </div>
-        ))}
-    </div>
+        ))
+    }
 </div>
 
 <style>
-    .job-container {
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .jobs-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2em;
         width: 100%;
-    }
-
-    .job-title {
-        margin-bottom: 2%;
-    }
-
-    .job-description {
-        margin: 2%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
     }
 
     .job-card {
-        border: 1px solid black;
-        padding: 10px;
-        margin: 1.5em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 2em;
+        box-shadow: var(--box-shadow);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(var(--gray), 0.1);
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 0.6s ease-out;
     }
 
-    .image-container {
-        width: 30%;
-        height: fit-content;
+    .job-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .job-card:hover {
+        transform: translateY(-8px);
+        box-shadow:
+            0 12px 40px rgba(var(--gray), 30%),
+            0 20px 60px rgba(var(--gray), 20%);
+    }
+
+    .job-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .job-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5em;
+        margin-bottom: 1.5em;
+        animation: slideInLeft 0.8s ease-out;
+    }
+
+    .company-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(var(--gray-light), 0.5);
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(var(--gray), 20%);
+        transition: transform 0.3s ease;
+    }
+
+    .company-logo:hover {
+        transform: scale(1.05);
+    }
+
+    .company-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .job-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .company-name {
+        color: rgb(var(--black));
+        font-size: 1.5em;
+        font-weight: 700;
+        margin: 0 0 0.3em 0;
+        line-height: 1.2;
+    }
+
+    .job-role {
+        color: var(--accent);
+        font-size: 1.1em;
+        font-weight: 600;
+        margin: 0 0 0.5em 0;
+    }
+
+    .job-period {
+        color: rgb(var(--gray-dark));
+        font-size: 0.9em;
+        font-weight: 500;
+        background: rgba(var(--gray-light), 0.8);
+        padding: 0.3em 0.8em;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+    .job-content {
+        margin-bottom: 1.5em;
+    }
+
+    .job-description {
+        color: rgb(var(--gray-dark));
+        line-height: 1.7;
+        font-size: 1em;
+        margin: 0 0 1.5em 0;
+        text-align: justify;
+    }
+
+    .technologies h4 {
+        color: rgb(var(--black));
+        font-size: 1.1em;
+        font-weight: 600;
+        margin: 0 0 0.8em 0;
+    }
+
+    .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    .tech-tag {
+        background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+        color: white;
+        padding: 0.4em 0.8em;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(var(--accent), 0.3);
+    }
+
+    .tech-tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(var(--accent), 0.4);
+    }
+
+    .job-footer {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 1em;
+        border-top: 1px solid rgba(var(--gray), 0.1);
     }
 
     .job-link {
-        align-self: center;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.6em 1.2em;
+        border: 2px solid var(--accent);
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        background: transparent;
+    }
+
+    .job-link:hover {
+        background: var(--accent);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(var(--accent), 0.3);
+    }
+
+    .job-link svg {
+        transition: transform 0.3s ease;
+    }
+
+    .job-link:hover svg {
+        transform: translateX(2px);
+    }
+
+    /* Responsive design */
+    @media (min-width: 768px) {
+        .jobs-container {
+            grid-template-columns: 1fr;
+            max-width: 900px;
+        }
+
+        .job-card {
+            padding: 2.5em;
+        }
+
+        .company-name {
+            font-size: 1.7em;
+        }
+
+        .job-description {
+            font-size: 1.1em;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .jobs-container {
+            max-width: 1000px;
+        }
+    }
+
+    /* Animation delays for staggered effect */
+    .job-card:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    .job-card:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .job-card:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    .job-card:nth-child(4) {
+        animation-delay: 0.4s;
     }
 </style>

@@ -5,18 +5,179 @@ import JobCard from "../components/JobCard.astro";
 
 <Layout
 	title="Experiencia laboral"
-	description="Lorem ipsum dolor sit amet"
+	description="Mi trayectoria profesional en el desarrollo de software"
 	pubDate={new Date()}
 >
 	<div class="experience-container">
-		<JobCard />
+		<div class="experience-intro">
+			<h2>Mi Experiencia Profesional</h2>
+			<p class="intro-subtitle">Una trayectoria de crecimiento y aprendizaje continuo en el desarrollo de software</p>
+		</div>
+
+		<div class="experience-content">
+			<JobCard />
+		</div>
 	</div>
 </Layout>
 
 <style>
+	/* Override layout styles para centrado completo */
+	:global(main) {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		min-height: 100vh !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	:global(article) {
+		width: 100% !important;
+		max-width: 1200px !important;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		margin: 0 auto !important;
+		padding: 0 !important;
+	}
+
+	:global(.prose) {
+		width: 100% !important;
+		max-width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
+	:global(.title) {
+		display: none !important;
+	}
+
+	:global(.hero-image) {
+		display: none !important;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes slideInFromLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes slideInFromRight {
+		from {
+			opacity: 0;
+			transform: translateX(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
 	.experience-container {
+		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
+		max-width: 1200px;
+		width: 100%;
+		padding: 2em 1em;
+		box-sizing: border-box;
+		animation: fadeIn 2.5s ease-in-out;
+	}
+
+	.experience-intro {
+		text-align: center;
+		margin-bottom: 3em;
+		padding: 1.5em;
+		background: linear-gradient(135deg, rgba(var(--gray-light), 0.3), rgba(255, 255, 255, 0.8));
+		border-radius: 16px;
+		box-shadow: var(--box-shadow);
+		border: 1px solid rgba(var(--gray), 0.1);
+		width: 100%;
+		max-width: 800px;
+	}
+
+	.experience-intro h2 {
+		color: var(--accent);
+		font-size: 2.2em;
+		margin-bottom: 0.5em;
+		font-weight: 700;
+		animation: slideInFromLeft 2.8s ease-in-out;
+	}
+
+	.intro-subtitle {
+		font-size: 1.1em;
+		color: rgb(var(--gray-dark));
+		margin: 0;
+		font-weight: 500;
+		animation: slideInFromRight 3.1s ease-in-out;
+		line-height: 1.6;
+	}
+
+	.experience-content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		animation: fadeIn 3.5s ease-in-out;
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.experience-container {
+			padding: 1em 0.5em;
+		}
+		
+		.experience-intro {
+			margin-bottom: 2em;
+			padding: 1em;
+		}
+		
+		.experience-intro h2 {
+			font-size: 1.8em;
+		}
+		
+		.intro-subtitle {
+			font-size: 1em;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.experience-container {
+			padding: 3em 2em;
+		}
+		
+		.experience-intro h2 {
+			font-size: 2.5em;
+		}
+		
+		.intro-subtitle {
+			font-size: 1.2em;
+		}
 	}
 </style>
