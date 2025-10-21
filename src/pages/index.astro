@@ -11,32 +11,68 @@ import "../styles/main.css";
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<script src="https://kit.fontawesome.com/2549fec63c.js" crossorigin="anonymous"></script>
+		<script
+			src="https://kit.fontawesome.com/2549fec63c.js"
+			crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
 		<main class="main">
 			<div class="index-container">
-				<h5> ¡Hola! Me llamo Gabriel Borràs Serra </h5>
-				<p>
-					Actualmente tengo +3 años de experiencia en el desarrollo de
-					aplicaciones web. Me gusta mucho la tecnología, y
-					particularmente el desarrollo de aplicaciones Fullstack,
-					Bases de Datos y programación de funciones en entornos
-					Cloud.
-				</p>
-				<p>
-					Aquí encontrarás la principal información sobre los
-					proyectos en los que he trabajado:
-				</p>
+				<!-- Hero Section -->
+				<section class="hero-section">
+					<div class="greeting-badge">
+						<span class="wave">👋</span>
+						<span>¡Bienvenido a mi portafolio!</span>
+					</div>
 
-				<div class="cv-button-container">
+					<h1 class="hero-title">
+						¡Hola! Soy <span class="highlight"
+							>Gabriel Borràs Serra</span
+						>
+					</h1>
+
+					<p class="hero-subtitle">
+						Desarrollador Fullstack con +5 años de experiencia
+					</p>
+
+					<div class="expertise-tags">
+						<span class="tag">💻 Fullstack Development</span>
+						<span class="tag">🗄️ Bases de Datos</span>
+						<span class="tag">☁️ Cloud Computing</span>
+					</div>
+				</section>
+
+				<!-- About Section -->
+				<section class="about-section">
+					<p class="about-text">
+						Me apasiona la tecnología, y crear soluciones
+						innovadoras y útiles. Estoy especializado en el desarrollo de aplicaciones
+						web, bases de datos y programación en entornos Cloud.
+					</p>
+					<p class="about-text secondary">
+						A continuación, encontrarás los proyectos más destacados
+						en los que he trabajado y las tecnologías que domino.
+					</p>
+				</section>
+
+				<!-- CTA Button -->
+				<div class="cta-section">
 					<button id="cv-download" class="cv-download">
-						Descárgate mi CV
+						<span class="button-icon">📄</span>
+						<span class="button-text">Descarga mi CV</span>
+						<span class="button-arrow">→</span>
 					</button>
 				</div>
 
-				<Projects />
+				<!-- Projects Section -->
+				<section class="projects-section">
+					<div class="section-header">
+						<h2 class="section-title">Proyectos Destacados</h2>
+						<div class="title-underline"></div>
+					</div>
+					<Projects />
+				</section>
 			</div>
 		</main>
 		<Footer />
@@ -54,63 +90,330 @@ import "../styles/main.css";
 		</script>
 
 		<style>
+			/* Container Principal */
 			.index-container {
-				max-width: 75%;
+				max-width: 1200px;
+				width: 90%;
 				margin: 0 auto;
-				margin-top: 1em;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
+				padding: 2rem 1rem;
 			}
 
-			@media only screen and (max-width: 500px) {
-				.index-container {
-					max-width: 100%;
+			/* Hero Section */
+			.hero-section {
+				text-align: center;
+				margin-bottom: 4rem;
+				animation: fadeInUp 0.8s ease-out;
+			}
+
+			.greeting-badge {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				background: linear-gradient(135deg, #aad7d9 0%, #e0f2f3 100%);
+				padding: 0.75rem 1.5rem;
+				border-radius: 50px;
+				font-size: 0.95rem;
+				font-weight: 600;
+				color: rgb(var(--gray-dark));
+				margin-bottom: 2rem;
+				box-shadow: 0 4px 15px rgba(170, 215, 217, 0.3);
+				animation: fadeInUp 0.8s ease-out 0.2s backwards;
+			}
+
+			.wave {
+				display: inline-block;
+				animation: wave 2s ease-in-out infinite;
+			}
+
+			@keyframes wave {
+				0%,
+				100% {
+					transform: rotate(0deg);
+				}
+				25% {
+					transform: rotate(20deg);
+				}
+				75% {
+					transform: rotate(-20deg);
 				}
 			}
 
-			.cv-button-container {
+			.hero-title {
+				font-size: clamp(2rem, 5vw, 3.5rem);
+				font-weight: 800;
+				color: rgb(var(--black));
+				margin-bottom: 1rem;
+				line-height: 1.2;
+				animation: fadeInUp 0.8s ease-out 0.3s backwards;
+			}
+
+			.highlight {
+				color: #2b8a8e;
+				background: linear-gradient(135deg, #2b8a8e 0%, #5ab5ba 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				position: relative;
+				display: inline-block;
+				font-weight: 800;
+			}
+
+			.highlight::after {
+				content: "";
+				position: absolute;
+				bottom: -8px;
+				left: 0;
+				width: 100%;
+				height: 4px;
+				background: linear-gradient(90deg, #2b8a8e, #5ab5ba);
+				border-radius: 2px;
+				animation: slideIn 0.6s ease-out 0.8s backwards;
+			}
+
+			.hero-subtitle {
+				font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+				color: rgb(var(--gray));
+				font-weight: 500;
+				margin-bottom: 2rem;
+				animation: fadeInUp 0.8s ease-out 0.4s backwards;
+			}
+
+			.expertise-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+				justify-content: center;
+				margin-top: 2rem;
+				animation: fadeInUp 0.8s ease-out 0.5s backwards;
+			}
+
+			.tag {
+				background: #fff;
+				padding: 0.75rem 1.5rem;
+				border-radius: 12px;
+				font-size: 0.95rem;
+				font-weight: 600;
+				color: rgb(var(--gray-dark));
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+				transition: all 0.3s ease;
+				border: 2px solid transparent;
+			}
+
+			.tag:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 6px 20px rgba(170, 215, 217, 0.4);
+				border-color: #aad7d9;
+			}
+
+			/* About Section */
+			.about-section {
+				max-width: 800px;
+				margin: 0 auto 3rem;
+				text-align: center;
+				animation: fadeInUp 0.8s ease-out 0.6s backwards;
+			}
+
+			.about-text {
+				font-size: 1.15rem;
+				line-height: 1.8;
+				color: rgb(var(--gray-dark));
+				margin-bottom: 1.5rem;
+			}
+
+			.about-text.secondary {
+				color: rgb(var(--gray));
+				font-size: 1.05rem;
+			}
+
+			/* CTA Section */
+			.cta-section {
 				display: flex;
 				justify-content: center;
-				margin-top: 1em;
+				margin: 3rem 0 4rem;
+				animation: fadeInUp 0.8s ease-out 0.7s backwards;
 			}
 
 			.cv-download {
+				display: inline-flex;
 				align-items: center;
-				background-color: #aad7d9;
-				border-radius: 5px;
-				box-shadow: rgba(151, 65, 252, 0.2) 0 5px 15px -5px;
-				box-sizing: border-box;
-				color: black;
-				display: flex;
-				font-family: Phantomsans, sans-serif;
-				font-size: 20px;
-				justify-content: center;
-				line-height: 1em;
-				padding: 15px 25px;
-				margin-bottom: 20px;
-				text-decoration: none;
-				user-select: none;
-				-webkit-user-select: none;
-				touch-action: manipulation;
-				white-space: nowrap;
+				gap: 0.75rem;
+				background: linear-gradient(135deg, #aad7d9 0%, #b8e0e2 100%);
+				border: none;
+				border-radius: 50px;
+				padding: 1rem 2.5rem;
+				font-family: "Atkinson", sans-serif;
+				font-size: 1.1rem;
+				font-weight: 700;
+				color: rgb(var(--black));
 				cursor: pointer;
-				transition:
-				background-color 0.2s,
-				transform 0.2s,
+				box-shadow: 0 4px 20px rgba(170, 215, 217, 0.4);
+				transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.cv-download::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					rgba(255, 255, 255, 0.3),
+					transparent
+				);
+				transition: left 0.5s;
+			}
+
+			.cv-download:hover::before {
+				left: 100%;
 			}
 
 			.cv-download:hover {
-				background-image: linear-gradient(
-					144deg,
-					#aad7d9,
-					#e0f2f3 85%,
-					#fbf9f1
-				);
-				transform: scale(1.05);
-				box-shadow: rgba(151, 65, 252, 0.4) 0 8px 20px -5px;
+				transform: translateY(-3px) scale(1.05);
+				box-shadow: 0 8px 30px rgba(170, 215, 217, 0.6);
+				background: linear-gradient(135deg, #b8e0e2 0%, #aad7d9 100%);
+			}
+
+			.cv-download:active {
+				transform: translateY(-1px) scale(1.02);
+			}
+
+			.button-icon {
+				font-size: 1.3rem;
+			}
+
+			.button-arrow {
+				font-size: 1.3rem;
+				font-weight: bold;
+				transition: transform 0.3s ease;
+			}
+
+			.cv-download:hover .button-arrow {
+				transform: translateX(5px);
+			}
+
+			/* Projects Section */
+			.projects-section {
+				margin-top: 4rem;
+				animation: fadeInUp 0.8s ease-out 0.8s backwards;
+			}
+
+			.section-header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+
+			.section-title {
+				font-size: clamp(2rem, 4vw, 2.5rem);
+				font-weight: 800;
+				color: rgb(var(--black));
+				margin-bottom: 1rem;
+			}
+
+			.title-underline {
+				width: 80px;
+				height: 4px;
+				background: linear-gradient(90deg, #aad7d9, #e0f2f3);
+				margin: 0 auto;
+				border-radius: 2px;
+			}
+
+			/* Animations */
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes slideIn {
+				from {
+					width: 0;
+				}
+				to {
+					width: 100%;
+				}
+			}
+
+			/* Responsive Design */
+			@media only screen and (max-width: 768px) {
+				.index-container {
+					width: 95%;
+					padding: 1rem 0.5rem;
+				}
+
+				.hero-section {
+					margin-bottom: 3rem;
+				}
+
+				.greeting-badge {
+					font-size: 0.85rem;
+					padding: 0.6rem 1.2rem;
+				}
+
+				.hero-title {
+					margin-bottom: 0.75rem;
+				}
+
+				.expertise-tags {
+					gap: 0.75rem;
+				}
+
+				.tag {
+					padding: 0.6rem 1.2rem;
+					font-size: 0.85rem;
+				}
+
+				.about-text {
+					font-size: 1rem;
+				}
+
+				.about-text.secondary {
+					font-size: 0.95rem;
+				}
+
+				.cv-download {
+					padding: 0.9rem 2rem;
+					font-size: 1rem;
+				}
+
+				.section-title {
+					margin-bottom: 0.75rem;
+				}
+
+				.projects-section {
+					margin-top: 3rem;
+				}
+			}
+
+			@media only screen and (max-width: 480px) {
+				.expertise-tags {
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.tag {
+					width: 100%;
+					max-width: 300px;
+					text-align: center;
+				}
+
+				.hero-title {
+					font-size: 1.8rem;
+				}
+
+				.highlight::after {
+					bottom: -4px;
+					height: 3px;
+				}
 			}
 		</style>
 	</body>

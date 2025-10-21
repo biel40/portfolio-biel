@@ -21,7 +21,7 @@ let projects = [
     {
         title: 'Hotelinking',
         description: 'Start-Up mallorquina enfocada principalmente al sector turístico y a una suite de productos de fidelización y marketing para el sector hotelero. Desarrollo de nuevas funcionalidades y mantenimiento de la plataforma',
-        image: 'https://scontent.fpmi4-1.fna.fbcdn.net/v/t39.30808-6/508197616_1300873425377293_5322884445807694807_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rjh-GOxmctMQ7kNvwHk5IbZ&_nc_oc=Adkh2yN9nS4cQrB1z5PrBFDFD71ITmetr8gWnMp_IJ_OpM3j8bQIC_GB_gcbMKF2Aac&_nc_zt=23&_nc_ht=scontent.fpmi4-1.fna&_nc_gid=VaVUZzK4Q2CCs2qeEOdqrA&oh=00_AfYrYXi92OGnRWJb2ToLKnFugQiub-QkhstYV3lzEbn-9A&oe=68C0C135',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqKjes8Z-f1FcLurMp-_vibstpswCsOxylYg&s',
         link: 'https://www.hotelinking.com/'
     },
     {
@@ -33,54 +33,214 @@ let projects = [
 ]
 ---
 
-<div>
+<div class="projects-wrapper">
     <div class="project-container">
         {projects.map((project) => (
-            <div class="project-card">
-                <h4 class="project-title"> {project.title} </h4>
-
-                <div class="image-container">
-                    <img class="image" src={project.image} alt={project.title} />
+            <article class="project-card">
+                <div class="card-content">
+                    <div class="image-container">
+                        <img class="project-image" src={project.image} alt={project.title} />
+                    </div>
+                    
+                    <div class="card-body">
+                        <h3 class="project-title">{project.title}</h3>
+                        <p class="project-description">{project.description}</p>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <a class="project-link" href={project.link} target="_blank" rel="noopener noreferrer">
+                            <span>Ver más</span>
+                            <span class="link-arrow">→</span>
+                        </a>
+                    </div>
                 </div>
-               
-                <p> {project.description} </p>
-
-                <a class="project-link" href={project.link}> Ver más </a>
-            </div>
+            </article>
         ))}
     </div>
 </div>
 
 <style>
-    .project-container {
+    .projects-wrapper {
         width: 100%;
-    }
-
-    .project-card {
-        border: 1px solid black;
-        padding: 10px;
-        margin: 1em;
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
     }
 
-    .project-title {
-        margin: 1em;
+    .project-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .project-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(170, 215, 217, 0.3);
+        border-color: #aad7d9;
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .image-container {
-        width: 80%;
-        height: fit-content;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        position: relative;
     }
 
-    .image {
-        width: 60%;
-        max-width: 60%;
+    .image-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.02) 100%);
+        pointer-events: none;
+    }
+
+    .project-image {
+        max-width: 85%;
+        max-height: 85%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        transition: transform 0.3s ease;
+        position: relative;
+        z-index: 1;
+        display: block;
+        margin: auto;
+        transform: translateX(-20px);
+    }
+
+    .project-card:hover .project-image {
+        transform: scale(1.05);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: rgb(var(--black));
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgb(var(--gray));
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    .card-footer {
+        padding: 0 1.5rem 1.5rem;
+        margin-top: auto;
     }
 
     .project-link {
-        align-self: center;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, #aad7d9 0%, #b8e0e2 100%);
+        color: rgb(var(--black));
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(170, 215, 217, 0.3);
+    }
+
+    .project-link:hover {
+        background: linear-gradient(135deg, #b8e0e2 0%, #aad7d9 100%);
+        transform: translateX(4px);
+        box-shadow: 0 4px 12px rgba(170, 215, 217, 0.5);
+    }
+
+    .link-arrow {
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+    }
+
+    .project-link:hover .link-arrow {
+        transform: translateX(4px);
+    }
+
+    /* Responsive Design */
+    @media only screen and (max-width: 768px) {
+        .project-container {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .image-container {
+            height: 200px;
+            padding: 1rem;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+        }
+
+        .card-footer {
+            padding: 0 1.25rem 1.25rem;
+        }
+    }
+
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        .project-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 1400px) {
+        .project-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 </style>
