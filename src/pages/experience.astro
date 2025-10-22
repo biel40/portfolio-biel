@@ -11,7 +11,7 @@ import JobCard from "../components/JobCard.astro";
 	<div class="experience-container">
 		<div class="experience-intro">
 			<h2>Mi Experiencia Profesional</h2>
-			<p class="intro-subtitle">Una trayectoria de crecimiento y aprendizaje continuo en el desarrollo de software, tanto frontend como backend.</p>
+			<p class="intro-subtitle">Te dejo a continuación un pequeño resumen de toda mi trayectoria profesional, en mi etapa de crecimiento como desarrollador FullStack en diversas empresas del mundo de la tecnología.</p>
 		</div>
 
 		<div class="experience-content">
@@ -85,6 +85,17 @@ import JobCard from "../components/JobCard.astro";
 		}
 	}
 
+	@keyframes slideInFromLeftMobile {
+		from {
+			opacity: 0;
+			transform: translateX(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
 	@keyframes slideInFromRight {
 		from {
 			opacity: 0;
@@ -148,6 +159,10 @@ import JobCard from "../components/JobCard.astro";
 
 	/* Responsive */
 	@media (max-width: 768px) {
+		.experience-intro h2 {
+			animation: slideInFromLeftMobile 2.8s ease-in-out;
+		}
+
 		.experience-container {
 			padding: 1em 0.5em;
 		}
