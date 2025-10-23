@@ -37,9 +37,9 @@ import "../styles/main.css";
 					</p>
 
 					<div class="expertise-tags">
-						<span class="tag">💻 Fullstack Development</span>
-						<span class="tag">🗄️ Bases de Datos</span>
-						<span class="tag">☁️ Cloud Computing</span>
+						<a href="/experience" class="tag">💻 Fullstack Development</a>
+						<a href="/technologies" class="tag">🗄️ Bases de Datos</a>
+						<a href="/technologies" class="tag">☁️ Cloud Computing</a>
 					</div>
 				</section>
 
@@ -188,15 +188,18 @@ import "../styles/main.css";
 			}
 
 			.tag {
+				display: inline-block;
 				background: #fff;
 				padding: 0.75rem 1.5rem;
 				border-radius: 12px;
 				font-size: 0.95rem;
 				font-weight: 600;
 				color: rgb(var(--gray-dark));
+				text-decoration: none;
 				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 				transition: all 0.3s ease;
 				border: 2px solid transparent;
+				cursor: pointer;
 			}
 
 			.tag:hover {
