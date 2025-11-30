@@ -1,6 +1,16 @@
 ---
 let jobs = [
     {
+        title: "Viajes El Corte Inglés",
+        role: "Desarrollador",
+        period: "Diciembre 2024 - Actualidad",
+        description:
+            "Desarrollo de soluciones tecnológicas para mejorar la experiencia del cliente en el sector de viajes y turismo. Implementación de nuevas funcionalidades y mantenimiento de plataformas digitales de última generación.",
+        technologies: ["JavaScript", "Angular", "Node.js", ".NET Core", "APIs REST", "SQL Server", "Docker", "Kafka"],
+        image: "https://www.tourinews.es/uploads/s1/13/73/51/viajes-el-corte-ingles.jpeg",
+        link: "https://www.viajeselcorteingles.es/",
+    },
+    {
         title: "Waka Solutions",
         role: "Desarrollador Full Stack",
         period: "2023 - Presente",
@@ -70,7 +80,7 @@ let jobs = [
                     <div class="technologies">
                         <h4>Tecnologías utilizadas:</h4>
                         <div class="tech-tags">
-                            {job.technologies.map((tech) => (
+                            {job.technologies?.map((tech) => (
                                 <span class="tech-tag">{tech}</span>
                             ))}
                         </div>
