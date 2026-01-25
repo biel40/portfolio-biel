@@ -12,10 +12,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.14",
-    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.16.7",
+    "astro": "^5.16.15",
     "typescript": "^5.3.3"
   }
 }
