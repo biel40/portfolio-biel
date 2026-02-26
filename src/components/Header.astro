@@ -5,110 +5,256 @@ import { SITE_TITLE } from "../consts";
 
 <script>
 	const mobileMenu = document.getElementById("mobile-menu");
+	const overlay = document.getElementById("nav-overlay");
+	const internalLinks = document.getElementById("internal-links");
+	const body = document.body;
 	
-	if (mobileMenu) {
-		mobileMenu.addEventListener("click", function () {
-			let internalLinks = document.getElementById("internal-links");
-
-			if (internalLinks) {
-				internalLinks.classList.toggle("active");
-			} 
-
-			mobileMenu.classList.toggle("active");
-		});
+	function toggleMenu() {
+		if (internalLinks && overlay) {
+			const isActive = internalLinks.classList.toggle("active");
+			mobileMenu?.classList.toggle("active");
+			overlay.classList.toggle("active");
+			body.style.overflow = isActive ? "hidden" : "";
+		}
 	}
 	
+	function closeMenu() {
+		internalLinks?.classList.remove("active");
+		mobileMenu?.classList.remove("active");
+		overlay?.classList.remove("active");
+		body.style.overflow = "";
+	}
+	
+	mobileMenu?.addEventListener("click", toggleMenu);
+	overlay?.addEventListener("click", closeMenu);
+	
+	// Cerrar menú al hacer click en un enlace
+	internalLinks?.querySelectorAll("a").forEach(link => {
+		link.addEventListener("click", closeMenu);
+	});
+	
+	// Cerrar con tecla Escape
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape") closeMenu();
+	});
 </script>
 
 <header>
 	<nav class="nav-menu">
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/" class="logo">
+			<span class="logo-text">{SITE_TITLE}</span>
+		</a>
 
-		<button id="mobile-menu" class="">☰</button>
+		<button id="mobile-menu" class="hamburger" aria-label="Menú de navegación" aria-expanded="false">
+			<span class="hamburger-line"></span>
+			<span class="hamburger-line"></span>
+			<span class="hamburger-line"></span>
+		</button>
+
+		<div id="nav-overlay" class="nav-overlay"></div>
 
 		<div id="internal-links" class="internal-links">
-			<HeaderLink href="/">Principal</HeaderLink>
-			<HeaderLink href="/about">Sobre mí</HeaderLink>
-			<HeaderLink href="/experience">Experiencia</HeaderLink>
-			<HeaderLink href="/technologies">Tecnología</HeaderLink>
-			<HeaderLink href="/contact">Contacto</HeaderLink>
+			<div class="nav-links-wrapper">
+				<HeaderLink href="/">Principal</HeaderLink>
+				<HeaderLink href="/about">Sobre mí</HeaderLink>
+				<HeaderLink href="/experience">Experiencia</HeaderLink>
+				<HeaderLink href="/technologies">Tecnología</HeaderLink>
+				<HeaderLink href="/contact">Contacto</HeaderLink>
+			</div>
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 1000;
 		margin: 0;
-		padding-left: 1em;
-		background: #aad7d9;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-		color: #fbf9f1;
+		padding: 0 1.5em;
+		background: linear-gradient(135deg, #aad7d9 0%, #92c9cb 100%);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+		backdrop-filter: blur(10px);
 	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0.5em 0;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+
+	/* Logo */
+	.logo {
+		display: flex;
+		align-items: center;
 		text-decoration: none;
+		padding: 0.5em 0;
+		transition: transform 0.3s ease;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+
+	.logo:hover {
+		transform: scale(1.02);
 	}
-	
+
+	.logo-text {
+		font-size: 1.6em;
+		font-weight: 800;
+		color: #2c3e50;
+		letter-spacing: -0.5px;
+		background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	/* Navigation Links - Desktop */
 	.internal-links {
 		display: flex;
 		align-items: center;
-		margin-right: 1em;
 	}
 
-	#mobile-menu {
+	.nav-links-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+
+	/* Hamburger Button */
+	.hamburger {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 44px;
+		height: 44px;
+		padding: 0;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		z-index: 1002;
+		gap: 5px;
+	}
+
+	.hamburger-line {
+		display: block;
+		width: 24px;
+		height: 3px;
+		background: #2c3e50;
+		border-radius: 3px;
+		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.hamburger.active .hamburger-line:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.hamburger.active .hamburger-line:nth-child(2) {
+		opacity: 0;
+		transform: scaleX(0);
+	}
+
+	.hamburger.active .hamburger-line:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	/* Overlay */
+	.nav-overlay {
 		display: none;
 	}
 
-	@keyframes slideIn {
-		from {
-			transform: translateX(100%);
-		}
-		to {
-			transform: translateX(0);
-		}
-	}
-	
-	@media only screen and (max-width: 500px) {
-		.internal-links {
-			display: none;
-			flex-direction: column;
-			border: 1px solid black; 
-			animation: slideIn 0.5s ease-out;
-			margin: 0;
+	/* Mobile Styles */
+	@media only screen and (max-width: 768px) {
+		header {
+			padding: 0 1em;
 		}
 
-		#mobile-menu {
+		.hamburger {
+			display: flex;
+		}
+
+		.nav-overlay {
 			display: block;
-			margin: 0.7em;
-			font-size: 24px;
-			background-color: transparent;
-			border: none;
-			color: #333; 
-			cursor: pointer;
-			transition: color 0.5s ease-in-out;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			backdrop-filter: blur(4px);
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease;
+			z-index: 1000;
+		}
+
+		.nav-overlay.active {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.internal-links {
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 280px;
+			max-width: 85vw;
+			height: 100vh;
+			background: linear-gradient(180deg, #aad7d9 0%, #92c9cb 50%, #7fbfc1 100%);
+			flex-direction: column;
+			justify-content: flex-start;
+			padding: 5em 0 2em;
+			transform: translateX(100%);
+			transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+			z-index: 1001;
+			overflow-y: auto;
 		}
 
 		.internal-links.active {
-			display: flex;
+			transform: translateX(0);
+		}
+
+		.nav-links-wrapper {
+			flex-direction: column;
+			width: 100%;
+			gap: 0;
+			padding: 0 0 0 1em;
+		}
+
+		.internal-links.active .nav-links-wrapper :global(a) {
+			animation: slideInLink 0.4s ease forwards;
+			opacity: 0;
+		}
+
+		.internal-links.active .nav-links-wrapper :global(a:nth-child(1)) { animation-delay: 0.1s; }
+		.internal-links.active .nav-links-wrapper :global(a:nth-child(2)) { animation-delay: 0.15s; }
+		.internal-links.active .nav-links-wrapper :global(a:nth-child(3)) { animation-delay: 0.2s; }
+		.internal-links.active .nav-links-wrapper :global(a:nth-child(4)) { animation-delay: 0.25s; }
+		.internal-links.active .nav-links-wrapper :global(a:nth-child(5)) { animation-delay: 0.3s; }
+	}
+
+	@keyframes slideInLink {
+		from {
+			opacity: 0;
+			transform: translateX(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	/* Desktop hover improvements */
+	@media only screen and (min-width: 769px) {
+		.nav-links-wrapper {
+			gap: 0.5em;
+		}
+
+		.logo-text {
+			font-size: 1.8em;
 		}
 	}
 </style>

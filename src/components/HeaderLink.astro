@@ -11,14 +11,129 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
+	<span class="link-indicator"></span>
 </a>
+
 <style>
 	a {
-		display: inline-block;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		padding: 1em 1.25em;
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: #2c3e50;
 		text-decoration: none;
+		border-radius: 8px;
+		transition: all 0.3s ease;
+		overflow: hidden;
 	}
+
+	a::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		width: 0;
+		height: 3px;
+		background: linear-gradient(90deg, #e76f51, #f4a261);
+		border-radius: 3px;
+		transform: translateX(-50%);
+		transition: width 0.3s ease;
+	}
+
+	a:hover {
+		color: #1a252f;
+		background: rgba(255, 255, 255, 0.3);
+	}
+
+	a:hover::before {
+		width: 60%;
+	}
+
 	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
+		font-weight: 700;
+		color: #1a252f;
+	}
+
+	a.active::before {
+		width: 70%;
+		background: linear-gradient(90deg, #e76f51, #f4a261);
+	}
+
+	.link-indicator {
+		display: none;
+	}
+
+	/* Mobile styles */
+	@media only screen and (max-width: 768px) {
+		a {
+			width: 100%;
+			padding: 1.5em 2em;
+			font-size: 1.2rem;
+			border-radius: 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			justify-content: space-between;
+			position: relative;
+		}
+
+		a::before {
+			display: none;
+		}
+
+		a::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 0;
+			height: 100%;
+			background: linear-gradient(90deg, rgba(231, 111, 81, 0.15) 0%, transparent 100%);
+			transition: width 0.4s ease;
+			z-index: -1;
+		}
+
+		a:hover {
+			background: rgba(255, 255, 255, 0.15);
+			padding-left: 2.5em;
+		}
+
+		a:hover::after {
+			width: 100%;
+		}
+
+		a.active {
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		a.active::after {
+			width: 100%;
+		}
+
+		.link-indicator {
+			display: block;
+			width: 10px;
+			height: 10px;
+			background: transparent;
+			border-radius: 50%;
+			transition: all 0.3s ease;
+		}
+
+		a.active .link-indicator {
+			background: linear-gradient(135deg, #e76f51, #f4a261);
+			box-shadow: 0 0 12px rgba(231, 111, 81, 0.6);
+			animation: pulse 2s ease-in-out infinite;
+		}
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			transform: scale(1);
+			box-shadow: 0 0 12px rgba(231, 111, 81, 0.6);
+		}
+		50% {
+			transform: scale(1.2);
+			box-shadow: 0 0 20px rgba(231, 111, 81, 0.8);
+		}
 	}
 </style>
